@@ -1,0 +1,80 @@
+STAR Method
+
+1. Tell me about a time when you encountered a difficult bug in your code. How did you identify and fix it?
+
+S: I was working with a group of three on an event-planning collaboration web application. One of our features was a voting system that allowed users to vote on different event options.
+T: The voting system needed to keep track of the votes and display the option with the highest number of votes on the results screen. However, we discovered that when users started a new round of voting, the previous votes were not being reset. This caused votes from previous rounds to carry over, so certain options would have an unfair advantage and could keep winning.
+A: We investigated the backend to determine why the previous votes were being retained. We traced how the votes were being stored and found that the previous voting data was not being cleared when a new voting round started. We changed the backend logic so that the previous votes were reset before starting a new round. We then tested multiple voting rounds to make sure the results were based only on the votes from the current round.
+R: After fixing the vote reset logic, each voting round correctly started with a clean set of votes, and the results screen displayed the option with the highest number of votes from the current round.
+
+
+2. Describe a time when you had to learn a new programming language, framework, or technology quickly. How did you approach it?
+
+S: I joined a video game development team that had already completed one semester of work. Before joining the team, I had limited experience with Unity and no experience with C#.
+T: We were using Scrum, and my priority for that week was to implement a weapon HUD from scratch. The HUD needed to show players which weapon they were currently holding and how many bullets were remaining before they needed to reload.
+A: Since I was unfamiliar with C# and had limited Unity experience, I started by watching tutorials to understand the Unity tools and concepts I would need. I also reviewed the existing codebase and asked my more experienced teammates questions about C# and how they structured their code. I used what I learned to follow the team's existing coding patterns instead of creating a completely separate structure.
+R: As a result, I was able to learn the necessary C# and Unity concepts, design and implement the weapon HUD from scratch, and complete it on time for the sprint.
+
+
+3. Tell me about a time when you disagreed with a teammate about a technical decision. How did you handle the disagreement?
+
+S: I was working with a team on a web application for event planning. The application helped groups make decisions about things like the venue, theme, and time of an event.
+T: We needed to decide how users should rank their options. We had two approaches: Version A, where users clicked on options to rank them, and Version B, where users dragged and dropped options to rank them. There was some disagreement within the team about which approach would provide a better user experience.
+A: Instead of deciding based on personal preference, we implemented both versions and tested them. We went through each version and discussed the pros and cons, including how easy each one was to use and how efficiently it worked within our UI. Based on our testing and discussion, we agreed on the approach that worked better for our application.
+R: We were able to reach an agreement and move forward with the version that provided the more efficient and user-friendly experience. It also showed me the value of testing different technical approaches and using evidence to resolve disagreements.
+
+
+4. Describe a time when you had to work on a software project with a tight deadline. How did you prioritize your work?
+
+S: I was assigned to design and develop the entire frontend of a financial technology web application for a startup.
+T: I had about two weeks to create the brand, plan the website structure, and implement the frontend functionality, so I had to prioritize my work carefully to meet the deadline.
+A: I prioritized the work based on what would affect the rest of the development. First, I quickly established the brand and overall design direction so I had a consistent visual style. Then, I planned out the structure of the main pages and identified the common elements that would appear across multiple pages. Instead of building each page separately, I created smaller reusable components so I could develop the rest of the website more quickly and avoid repeating work.
+R: As a result, I was able to complete and deliver the frontend within the two-week deadline while maintaining a consistent design and reusable component structure.
+
+
+5. Tell me about a time when you had to work with a teammate who was struggling with a technical task. How did you help them?
+
+S: I was working on EventHive with a team of three, but one teammate was frequently absent from meetings and did not join the GitHub repository for a significant portion of the project.
+T: Me and my other teammate still needed to complete the project and make sure the missing work was covered without letting the team fall behind.
+A: So me and her communicated about the unfinished work, divided the necessary tasks between ourselves, and continued developing the application. We kept the absent teammate informed about what we were working on and what they needed to contribute.
+R: The project was completed despite the team's coordination challenges, and we learned how to keep a project moving when a team member was not consistently available.
+
+
+6. Describe a time when you had difficulty understanding someone else’s code. What did you do to understand and work with it?
+
+S: I was assigned to work on a video game project that already had a semester's worth of development. I had limited experience with C# and Unity, so I was also unfamiliar with the existing codebase.
+T: I was tasked with implementing an automatic gun equip feature. I noticed that when a player died and respawned, they had to manually pick up their gun again. If they entered another room without picking it up, they could get soft-locked because they needed to defeat every enemy in the room to progress.
+A: Since I was unfamiliar with the codebase, I first asked a senior teammate who had worked extensively on the existing code to walk me through how the classes and systems were structured. I also asked questions about how the existing weapon system interacted with the player and how I could use the relevant Unity tools. After understanding how the existing systems worked, I identified where the automatic equip functionality would fit without disrupting the existing code.
+R: After understanding the codebase and how the existing systems interacted, I was able to implement the automatic equip functionality in the appropriate location and fix the soft-lock issue.
+
+
+7. Tell me about a time when a feature or solution you implemented did not work as expected. How did you troubleshoot the problem?
+
+S: I worked on a hackathon project for music festivals that allowed users to create geographically tagged posts. We used these posts to determine the "Hottest" location, which showed the most popular area within the previous 30 minutes.
+T: I was responsible for the functionality that allowed users to create posts. However, when I tested the feature, the post wasn't being saved to the Supabase database even though the request from the application was being sent.
+A: I started by checking the error from Supabase and then investigated how the database was handling authentication and permissions. I discovered that Row Level Security was enabled on the posts table, but the policy did not allow authenticated users to insert new posts. I updated the RLS policy to allow authenticated users to create their own posts, and then tested the feature again with an authenticated account.
+R: After updating the RLS policy, authenticated users were able to successfully create posts. This allowed us to use the posts for the "Hottest" location feature as intended.
+
+
+8. Describe a time when you had to collaborate with other developers to complete a software project. What challenges did you face, and how did you handle them?
+
+S: I was working on a full-stack web development application with a team of 5 where we had a set of frontend tests to make sure our website components were working correctly.
+T: We had 10 frontend tests that needed to pass before deployment. However, we noticed that the tests passed on some team members' local machines but failed on others. My task was to help identify why the results were inconsistent and find a way to make the testing environment consistent.
+A: Since the same tests were producing different results on different machines, we suspected that differences in the local development environments were causing the issue. To make sure everyone was using the same software and dependencies, we decided to run the application and tests inside a Docker container with a standardized environment.
+R: After everyone used the same Docker environment, all 10 frontend tests passed consistently. This also gave the team a more reliable and consistent testing environment for future development.
+
+
+9. Tell me about a time when you had to make a technical trade-off, such as choosing between two different approaches or technologies. How did you make your decision?
+
+S: I was working on a Unity video game project where I needed to connect the weapon inventory to keyboard hotkeys, such as 1, 2, and 3, so players could quickly switch between weapons. The project already had a player inventory HUD that handled other items, such as armor.
+T: I needed to implement the weapon hotkey functionality, but the existing inventory system was somewhat difficult to understand and already had some bugs. I had to decide whether I should refactor the existing inventory class or create a separate system for the weapon hotkeys. I also had a limited amount of time to complete the feature.
+A: I considered refactoring the existing class because it could make the overall system cleaner, but I was concerned that changing working code I didn't fully understand could introduce additional bugs and take too much time. I decided to create a separate class specifically for the weapon hotkey functionality while leaving the original inventory system unchanged. I connected the new system to the existing weapon functionality without modifying the original inventory logic.
+R: I was able to implement the weapon hotkeys within the time constraint while avoiding changes to the existing inventory system. The feature worked without introducing additional issues into the original inventory functionality.
+
+
+10. Describe a time when you improved the performance, quality, maintainability, or reliability of a piece of software. What did you do?
+
+S: I was working on a Spring Boot Task Tracker project where I was building REST APIs to create, update, retrieve, and delete tasks.
+T: While testing the application with Postman, I noticed that the API did not handle requests for tasks that didn't exist very well. I wanted to make the application more reliable and give the API a more appropriate response when a task could not be found.
+A: I updated the backend logic to check whether a task existed before trying to update or delete it. If the task wasn't found, I handled the situation instead of allowing the application to fail unexpectedly. I then used Postman to test both valid requests and requests for tasks that didn't exist.
+R: The API became more reliable because it could properly handle invalid requests without unexpectedly failing. It also made the behavior of the API more predictable when working with different task IDs.
