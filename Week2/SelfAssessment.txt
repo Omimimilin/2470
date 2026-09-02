@@ -1,0 +1,14 @@
+Self-Assessment (1-5)
+
+Java: 4
+OOP Concepts: 4
+SQL: 3.5
+HTML/CSS/Javascript: 3
+React/Angular: 3 (React) 1(Angular)
+Git/Github: 3.5
+Communication: 3.5
+
+Weakest Areas:
+1. Angular
+2. SQL
+3. HTML/CSS/Javascript
