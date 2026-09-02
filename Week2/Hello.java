@@ -112,7 +112,7 @@ public class Hello {
         System.out.println("Thank you for using the calculator.");
         */
 
-        /*//challenge #7 - calculate 5 test scores
+        //challenge #7 - calculate 5 test scores
         Scanner scan = new Scanner(System.in);
         int index = 0;
         int count = 5;
@@ -146,12 +146,11 @@ public class Hello {
         for(int i = 0; i < arr.length; i++){
             printGrade(arr[i]);
         }
-        System.out.println(""); */
+        System.out.println("");
 
 
         //challenge #8 Repl
-        Scanner scan = new Scanner(System.in);
-        int input = 0;
+        input = 0;
         double balance = 0;
         while(input != 4){
             System.out.println("1. Check Balance");
