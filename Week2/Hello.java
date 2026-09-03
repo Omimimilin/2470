@@ -112,7 +112,7 @@ public class Hello {
         System.out.println("Thank you for using the calculator.");
         */
 
-        //challenge #7 - calculate 5 test scores
+        /*//challenge #7 - calculate 5 test scores
         Scanner scan = new Scanner(System.in);
         int index = 0;
         int count = 5;
@@ -187,6 +187,136 @@ public class Hello {
             }
         }
         scan.close();
+        */
+
+        //challenge #8 REPL App
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Welcome to my REPL App!");
+        String input = scan.nextLine().toLowerCase();
+        int num1 = 0;
+        int num2 = 0;
+        while(!input.equals("quit")){
+            switch(input){
+                case "help":
+                    System.out.print("Available commands:\nadd\nsubtract\nmultiply\ndivide\nrandom\nreverse\nquit\n");
+                    break;
+                case "add":
+                    System.out.print("First number: ");
+                    num1 = scan.nextInt();
+                    System.out.print("Second number: ");
+                    num2 = scan.nextInt();
+                    System.out.printf("Result: %d%n", num1+num2);
+                    scan.nextLine();
+                    break;
+                case "subtract":
+                    System.out.print("First number: ");
+                    num1 = scan.nextInt();
+                    System.out.print("Second number: ");
+                    num2 = scan.nextInt();
+                    System.out.printf("Result: %d%n", num1-num2);
+                    scan.nextLine();
+                    break;
+                case "multiply":
+                    System.out.print("First number: ");
+                    num1 = scan.nextInt();
+                    System.out.print("Second number: ");
+                    num2 = scan.nextInt();
+                    System.out.printf("Result: %d%n", num1*num2);
+                    scan.nextLine();
+                    break;
+                case "divide":
+                    System.out.print("First number: ");
+                    num1 = scan.nextInt();
+                    System.out.print("Second number: ");
+                    num2 = scan.nextInt();
+                    System.out.printf("Result: %d%n", num1/num2);
+                    scan.nextLine();
+                    break;
+                case "reverse":
+                    System.out.print("Enter text: ");
+                    input = scan.nextLine();
+                    String reversed = new StringBuilder(input).reverse().toString();
+                    System.out.printf("Result: %s%n", reversed);
+                    break;
+                case "random":
+                    System.out.print("Minimum: ");
+                    num1 = scan.nextInt();
+                    System.out.print("Maximum: ");
+                    num2 = scan.nextInt();
+                    System.out.printf("Random number: %d%n", (int)(Math.random() * (num2 - num1 + 1)) + num1);
+                    scan.nextLine();
+                    break;
+                default:
+                    System.out.println("Invalid command, please trype a valid command");
+                    break;
+            }
+            input = scan.nextLine().toLowerCase();
+        }
+        System.out.println("Goodbye!");
+
+        //challenge #9 - Password Validator
+        //Scanner scan = new Scanner(System.in);
+        System.out.println("The password must:\nBe at least 8 characters\nContain at least one uppercase letter\nContain at least one lowercase letter\nContain at least one number");
+        System.out.print("Please enter a password: ");
+        String password = scan.nextLine();
+        int lower = 0;
+        int upper = 0;
+        int num = 0;
+        for(int i = 0; i < password.length(); i++){
+            char cur = password.charAt(i);
+            if(Character.isLowerCase(cur)){
+                lower++;
+            }
+            if(Character.isUpperCase(cur)){
+                upper++;
+            }
+            if(Character.isDigit(cur)){
+                num++;
+            }
+        }
+        if(password.length() >= 8 && lower > 0 && upper > 0 && num > 0){
+            System.out.println("Password accepted!");
+        } else{
+            System.out.println("Password rejected:");
+            if(password.length() < 8){
+                System.out.println("- Must be at least 8 characters");
+            }
+            if(upper == 0){
+                System.out.println("- Must contain an uppercase letter");
+            }
+            if (lower == 0){
+                System.out.println("- Must contain a lowercase letter");
+            }
+            if (num == 0){
+                System.out.println("- Must contain a number");
+            }
+        }
+
+        // challenge #10 - Word Analyzer
+        //Scanner scan = new Scanner(System.in);
+        System.out.print("Enter a word: ");
+        String word = scan.nextLine();
+        int vowels = 0;
+        int consonants = 0;
+        int digits = 0;
+        int spaces = 0;
+        for (int i = 0; i < word.length(); i++) {
+            char cur = word.charAt(i);
+            if(cur == 'a' || cur == 'e' || cur == 'i' || cur == 'o' || cur == 'u' || cur == 'A' || cur == 'E' || cur == 'I' || cur == 'O' || cur == 'U'){
+                vowels++;
+            } else if(Character.isLetter(cur)){
+                consonants++;
+            } else if(Character.isDigit(cur)){
+                digits++;
+            } else if(Character.isWhitespace(cur)){
+                spaces++;
+            }
+        }
+        System.out.println("Characters: " + word.length());
+        System.out.println("Vowels: " + vowels);
+        System.out.println("Consonants: " + consonants);
+        System.out.println("Digits: " + digits);
+        System.out.println("Spaces: " + spaces);
     }
 
     public static void printGrade(int score){
