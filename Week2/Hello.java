@@ -1,3 +1,6 @@
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 public class Hello {
     public static void main(String[] args) {
@@ -189,7 +192,7 @@ public class Hello {
         scan.close();
         */
 
-        //challenge #8 REPL App
+        /*//challenge #8 REPL App
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to my REPL App!");
         String input = scan.nextLine().toLowerCase();
@@ -316,10 +319,34 @@ public class Hello {
         System.out.println("Vowels: " + vowels);
         System.out.println("Consonants: " + consonants);
         System.out.println("Digits: " + digits);
-        System.out.println("Spaces: " + spaces);
+        System.out.println("Spaces: " + spaces); */
+
+        //challenge #11 - Datetime API
+        LocalDate date = LocalDate.now();
+        System.out.println("Date: " + date);
+        System.out.println("Year: " + date.getYear());
+        System.out.println("Month: " + date.getMonth());
+        System.out.println("Day: " + date.getDayOfMonth());
+        System.out.println("\n");
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter your birth date(YYYY-MM-DD): ");
+        LocalDate birthday = LocalDate.parse(scan.nextLine());
+        Period age = Period.between(birthday, date);
+        System.out.println("You are " + age.getYears() + " years old.");
+        System.out.println("\n");
+        System.out.print("Enter your birthday(YYYY-MM-DD): ");
+
+        birthday = LocalDate.parse(scan.nextLine());
+        LocalDate nextBirthday = birthday.withYear(date.getYear());
+        if (nextBirthday.isBefore(date) || nextBirthday.isEqual(date)) {
+            nextBirthday = nextBirthday.plusYears(1);
+        }
+        long daysUntil = ChronoUnit.DAYS.between(date, nextBirthday);
+        System.out.println("Days until your next birthday: " + daysUntil);
+
     }
 
-    public static void printGrade(int score){
+    /*public static void printGrade(int score){
             char grade;
             if(score >= 90){
             grade = 'A';
@@ -333,5 +360,5 @@ public class Hello {
             grade = 'F';
         }
         System.out.printf("%d - %c%n", score, grade);
-    }
+    }*/
 }
